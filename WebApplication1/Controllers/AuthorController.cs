@@ -28,6 +28,15 @@ public class AuthorsController : ControllerBase
         return author;
     }
 
+    [HttpPost]
+    public async Task<ActionResult<Author>> PostAuthor(Author author)
+    {
+        _context.Authors.Add(author);
+        await _context.SaveChangesAsync();
+
+        return Ok(author);
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAuthor(int id)
     {
@@ -36,7 +45,7 @@ public class AuthorsController : ControllerBase
         _context.Authors.Remove(author);
         await _context.SaveChangesAsync();
 
-        return NoContent();
+        return Ok();
     }
 
 }

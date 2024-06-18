@@ -2,14 +2,43 @@
 
 GET {{WebApplication1_HostAddress}}/books/
 Accept: application/json
+###
+
+POST {{WebApplication1_HostAddress}}/books/
+Accept: application/json
+Content-Type : application/json
+
+{
+  "id": 1,
+  "title": "test",
+  "description": "test",
+  "publicationDate": "2024-06-18T10:19:54.068Z",
+  "authorId": 1,
+  "author": {
+    "id": 1,
+    "name": "Author",
+    "biography": "Test"
+  }
+}
 
 ###
 
 GET {{WebApplication1_HostAddress}}/authors/
 Accept: application/json
 
+
 ###
 GET {{WebApplication1_HostAddress}}/authors/1
 Accept: application/json
 
-###7183
+###
+
+POST {{WebApplication1_HostAddress}}/authors/
+Accept: application/json
+Content-Type : application/json
+
+{
+  "id": 1,
+  "name": "Author",
+  "biography": "Test"
+}

@@ -28,6 +28,15 @@ public class BooksController : ControllerBase
         return book;
     }
 
+    [HttpPost]
+    public async Task<ActionResult<Author>> PostBook(Book book)
+    {
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+
+        return Ok(book);
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
