@@ -1,0 +1,15 @@
+@WebApplication1_HostAddress = https://localhost:7183/api
+
+GET {{WebApplication1_HostAddress}}/books/
+Accept: application/json
+
+###
+
+GET {{WebApplication1_HostAddress}}/authors/
+Accept: application/json
+
+###
+GET {{WebApplication1_HostAddress}}/authors/1
+Accept: application/json
+
+###7183
